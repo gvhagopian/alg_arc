@@ -169,6 +169,7 @@ int main(const int argc, const char **argv) {
             window.draw(fn_path);
         }
         window.draw(fn_txt);
+        window.draw(g);
         
         window.display();
     }

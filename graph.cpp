@@ -54,7 +54,7 @@ AlgArc::Graph::center(sf::Vector2f const &res) {
     int smaller_dim = floor(min(res.x, res.y));
     int multiplier_adjust = smaller_dim % (grid_dimension * small_ticks_per_tick);
     
-    int larger_pos = (larger_dim - smaller_dim / 2) + multiplier_adjust / 2;
+    int larger_pos = ((larger_dim - smaller_dim) / 2) + multiplier_adjust / 2;
     int smaller_pos = multiplier_adjust / 2;
     
     sf::Vector2f pos = res.x > res.y ? sf::Vector2f(larger_pos, smaller_pos) : sf::Vector2f(smaller_pos, larger_pos);
@@ -67,6 +67,6 @@ AlgArc::Graph::center(sf::Vector2f const &res) {
 void
 AlgArc::Graph::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     
-    target.draw(screen_area, *axes_shader);
+    target.draw(screen_area, &axes_shader);
     
 }
